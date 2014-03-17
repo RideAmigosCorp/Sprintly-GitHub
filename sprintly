@@ -379,6 +379,8 @@ class SprintlyTool:
 
         for product in products:
             for item in product['items']:
+                if item['status'] == 'someday':
+                    continue
                 if not product['id'] in statusTree[item['status']]:
                     statusTree[item['status']][product['id']] = []
 
